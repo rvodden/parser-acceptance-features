@@ -13,5 +13,7 @@ public interface Home {
 	 * @see com.vodden.math.parseracceptance.pages.Home#getResult()
 	 */
 	Boolean checkResult(Double value);
+	
+	Boolean findError(String message);
 
 }

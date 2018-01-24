@@ -19,19 +19,27 @@ public class ParserStepsImpl implements ParserSteps {
 		this.home = home;
 	}
 
+	@Override
 	@Given("I visit the webpage")
 	public void theUserVisitsTheWebpage() {
 		home.open();
 	}
-
+	
+	@Override
 	@When("I submit the expression (.*)")
 	public void theySubmitTheExpression(String value) {
 		home.calculate(value);
 	}
-
+    
+	@Override
 	@Then("the result should be (-?\\d+)")
 	public void theResultShouldBe(Double value) {
 		assertEquals(true, home.checkResult(value));
+	}
+	
+	@Then("I should see the error (.*)")
+	public void iShouldSeeTheError(String message) {
+		home.findError(message);
 	}
 
 }

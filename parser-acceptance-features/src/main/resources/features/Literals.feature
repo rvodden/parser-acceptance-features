@@ -4,7 +4,8 @@ Narrative:
 In order to start to build up more complex expressions
 As a parser user
 I want to be able to use numbers directly in my expression string
-					 
+
+				 
 Scenario:  This is a selection of positive literals we can test with
 	Given I visit the webpage
 	When I submit the expression 5
@@ -35,4 +36,10 @@ Scenario:  This is a selection of negative literals we can test with
 	
 	When I submit the expression -452
 	Then the result should be -452
+	
+#Scenario:  Dealing with invalid expressions
+#    Given I visit the webpage
+#    When I submit the expression nick woods
+#    Then I should see the error Invalid Expression
+ 	
 	
